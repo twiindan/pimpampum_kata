@@ -8,6 +8,12 @@ def pippampum(input):
 
     result = ''
 
+    if not isinstance(input, int):
+        return "Strings are not supported"
+
+    if input < 0:
+        return 'Negative number are not supported'
+
     if input == 60:
         return 'Toma'
 
@@ -31,6 +37,7 @@ def pippampum(input):
 
     return result
 
+
 @given(u'the number "{input}"')
 def step_impl(context, input):
 
@@ -47,3 +54,9 @@ def step_impl(context):
 def step_impl(context, expected):
 
     assert_equals(str(context.output), expected)
+
+
+@given(u'the string "{input}"')
+def step_impl(context, input):
+
+    context.input = input
