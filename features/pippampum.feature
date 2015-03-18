@@ -62,3 +62,16 @@ Feature: Introducing BDD
     Then I obtain "PimPamPum"
 
 
+  Scenario: Pip Pam Pum with negative numbers returns an error
+
+    Given the number "-2"
+    When I calculate it with Pip Pam Pum program
+    Then I obtain "Negative number are not supported"
+
+
+  Scenario: Pip Pam Pum with not numbers
+
+    Given the string "hello world"
+    When I calculate it with Pip Pam Pum program
+    Then I obtain "Strings are not supported"
+
